@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @serviced_route.route_id %>
+</p>
+
+<p>
+  <strong>Service provider:</strong>
+  <%= @serviced_route.service_provider_id %>
+</p>
+
+<%= link_to 'Edit', edit_serviced_route_path(@serviced_route) %> |
+<%= link_to 'Back', serviced_routes_path %>

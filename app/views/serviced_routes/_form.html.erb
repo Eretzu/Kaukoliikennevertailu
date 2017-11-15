@@ -1,0 +1,27 @@
+<%= form_with(model: serviced_route, local: true) do |form| %>
+  <% if serviced_route.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(serviced_route.errors.count, "error") %> prohibited this serviced_route from being saved:</h2>
+
+      <ul>
+      <% serviced_route.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :route_id %>
+    <%= form.number_field :route_id, id: :serviced_route_route_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_provider_id %>
+    <%= form.number_field :service_provider_id, id: :serviced_route_service_provider_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
