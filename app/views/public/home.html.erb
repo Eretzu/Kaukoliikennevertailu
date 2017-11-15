@@ -1,4 +1,15 @@
 <h1>Public#home</h1>
 <p>Find me in app/views/public/home.html.erb</p>
 <iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/directions?origin=Helsinki&destination=Turku&key= AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" allowfullscreen></iframe> 
+src=<%= "https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" %> allowfullscreen></iframe> 
+<form method="get">
+  <select name="departure">
+    <option value="helsinki">Helsinki</option>
+  </select>
+  <select name="arrive">
+    <option value="turku">Turku</option>
+    <option value="tampere">Tampere</option>
+    <option value="oulu">Oulu</option>
+  </select>
+  <input type="submit" value="Show route">
+</form>
