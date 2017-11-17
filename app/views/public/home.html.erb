@@ -1,18 +1,25 @@
+
 <head><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMrq2UmpHmSUSndgt-5xNhvdzI5e4wa6g&callback=initialize"
                       type="text/javascript"></script>
 </head>
 <h1>Public#home</h1>
 <p>Find me in app/views/public/home.html.erb</p>
 <iframe width="600" height="450" frameborder="0" style="border:0"
-src=<%= "https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&mode=transit&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" %> allowfullscreen></iframe>
+src=<%= 
+if(params.has_key?(:departure) && params.has_key?(:arrive))
+"https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" 
+else
+"https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
+end
+%> allowfullscreen></iframe>
 <form method="get">
   <select name="departure">
     <option value="helsinki">Helsinki</option>
   </select>
   <select name="arrive">
-    <option value="turku">Turku</option>
-    <option value="tampere">Tampere</option>
-    <option value="oulu">Oulu</option>
+    <option value="turku" <%= if(params[:arrive] == "turku") then "selected" end%>>Turku</option>
+    <option value="tampere" <%= if(params[:arrive] == "tampere") then "selected" end%>>Tampere</option>
+    <option value="oulu" <%= if(params[:arrive] == "oulu") then "selected" end%>>Oulu</option>
   </select>
   <input type="submit" value="Show route">
 </form>

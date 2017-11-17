@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe8b12a-9349-46d5-bad7-92223dbf800f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/public.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/public.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/public.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/public.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/public/home.html.erb" afterPath="$PROJECT_DIR$/app/views/public/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -21,12 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/public/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="127" lean-forward="false" selection-start-line="0" selection-start-column="127" selection-end-line="0" selection-end-column="127" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="public.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/public.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="840">
+              <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -131,8 +130,8 @@
       <list>
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/public.coffee" />
-        <option value="$PROJECT_DIR$/app/views/public/home.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/public.scss" />
+        <option value="$PROJECT_DIR$/app/views/public/home.html.erb" />
       </list>
     </option>
   </component>
@@ -358,12 +357,12 @@
       <workItem from="1510659691404" duration="1143000" />
       <workItem from="1510663282180" duration="321000" />
       <workItem from="1510751729674" duration="2951000" />
-      <workItem from="1510933132733" duration="2922000" />
+      <workItem from="1510933132733" duration="3081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7337000" />
+    <option name="totallyTimeSpent" value="7496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1318" height="1116" extended-state="0" />
@@ -763,19 +762,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/public/home.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/public.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="127" lean-forward="false" selection-start-line="0" selection-start-column="127" selection-end-line="0" selection-end-column="127" />
+        <state relative-caret-position="840">
+          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/public.coffee">
+    <entry file="file://$PROJECT_DIR$/app/views/public/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
