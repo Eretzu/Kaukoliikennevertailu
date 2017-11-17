@@ -1,4 +1,7 @@
 
+<head><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMrq2UmpHmSUSndgt-5xNhvdzI5e4wa6g&callback=initialize"
+                      type="text/javascript"></script>
+</head>
 <h1>Public#home</h1>
 <p>Find me in app/views/public/home.html.erb</p>
 <iframe width="600" height="450" frameborder="0" style="border:0"
@@ -10,11 +13,9 @@ else
 end
 %> allowfullscreen></iframe> 
 <%= form_tag("/", method :get) do %>
-  <%= select_tag(:arrival,
   <select name="departure">
     <option value="helsinki">Helsinki</option>
   </select>
-  <%= f.
   <select name="arrive">
     <% @cities.each do |city| %>
       <%= content_tag(:option, city.first, value: city.first) %> 
@@ -22,3 +23,5 @@ end
   </select>
   <input type="submit" value="Show route">
 <% end %>
+<div id="map-canvas"></div>
+<ol id="panel"></ol>
