@@ -9,14 +9,16 @@ else
 "https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
 end
 %> allowfullscreen></iframe> 
-<form method="get">
+<%= form_tag("/", method :get) do %>
+  <%= select_tag(:arrival,
   <select name="departure">
     <option value="helsinki">Helsinki</option>
   </select>
+  <%= f.
   <select name="arrive">
-    <option value="turku" <%= if(params[:arrive] == "turku") then "selected" end%>>Turku</option>
-    <option value="tampere" <%= if(params[:arrive] == "tampere") then "selected" end%>>Tampere</option>
-    <option value="oulu" <%= if(params[:arrive] == "oulu") then "selected" end%>>Oulu</option>
+    <% @cities.each do |city| %>
+      <%= content_tag(:option, city.first, value: city.first) %> 
+    <% end %>
   </select>
   <input type="submit" value="Show route">
-</form>
+<% end %>
