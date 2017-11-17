@@ -12,16 +12,16 @@ else
 "https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
 end
 %> allowfullscreen></iframe> 
-<%= form_tag("/", method :get) do %>
+<%= form_tag("/", method: "get") do %>
   <select name="departure">
     <option value="helsinki">Helsinki</option>
   </select>
   <select name="arrive">
     <% @cities.each do |city| %>
-      <%= content_tag(:option, city.first, value: city.first) %> 
+      <%= content_tag(:option, city.name, value: city.name) %> 
     <% end %>
   </select>
-  <input type="submit" value="Show route">
+  <input type="submit" value="Show route">  
 <% end %>
 <div id="map-canvas"></div>
 <ol id="panel"></ol>

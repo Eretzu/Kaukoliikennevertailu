@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+###
 initialize = ->
   goo = google.maps
   map = new (goo.Map)(document.getElementById('map-canvas'),
@@ -59,3 +60,4 @@ initialize = ->
   return
 
 google.maps.event.addDomListener window, 'load', initialize
+###
