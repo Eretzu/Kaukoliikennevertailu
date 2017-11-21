@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115140754) do
+ActiveRecord::Schema.define(version: 20171121150005) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -20,23 +20,20 @@ ActiveRecord::Schema.define(version: 20171115140754) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "city_1_id"
-    t.integer "city_2_id"
-    t.integer "length"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "service_providers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "serviced_routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "route_id"
-    t.integer "service_provider_id"
+  create_table "transportations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "city_start"
+    t.integer "city_end"
+    t.string "service_provider"
+    t.time "monday"
+    t.time "tuesday"
+    t.time "wednesday"
+    t.time "thursday"
+    t.time "friday"
+    t.time "saturday"
+    t.time "sunday"
+    t.integer "traveltime"
+    t.integer "price"
+    t.string "services"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,82 @@
+<%= form_with(model: transportation, local: true) do |form| %>
+  <% if transportation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transportation.errors.count, "error") %> prohibited this transportation from being saved:</h2>
+
+      <ul>
+      <% transportation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :city_start %>
+    <%= form.number_field :city_start, id: :transportation_city_start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_end %>
+    <%= form.number_field :city_end, id: :transportation_city_end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_provider %>
+    <%= form.text_field :service_provider, id: :transportation_service_provider %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monday %>
+    <%= form.time_select :monday, id: :transportation_monday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tuesday %>
+    <%= form.time_select :tuesday, id: :transportation_tuesday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wednesday %>
+    <%= form.time_select :wednesday, id: :transportation_wednesday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thursday %>
+    <%= form.time_select :thursday, id: :transportation_thursday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :friday %>
+    <%= form.time_select :friday, id: :transportation_friday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saturday %>
+    <%= form.time_select :saturday, id: :transportation_saturday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sunday %>
+    <%= form.time_select :sunday, id: :transportation_sunday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :traveltime %>
+    <%= form.number_field :traveltime, id: :transportation_traveltime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :transportation_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :services %>
+    <%= form.text_field :services, id: :transportation_services %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

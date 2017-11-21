@@ -13,15 +13,11 @@ else
 end
 %> allowfullscreen></iframe> 
 <%= form_tag("/", method: "get") do %>
-  <select name="departure">
-    <option value="helsinki">Helsinki</option>
-  </select>
-  <select name="arrive">
-    <% @cities.each do |city| %>
-      <%= content_tag(:option, city.name, value: city.name) %> 
-    <% end %>
-  </select>
-  <input type="submit" value="Show route">  
+  <%= collection_select(nil, :departure, @cities, :name, :name, 
+    {:selected => params[:departure]}) %>
+  <%= collection_select(nil, :arrive,    @cities, :name, :name, 
+    {:selected => params[:arrive]}) %>
+  <%= submit_tag("Show route") %>  
 <% end %>
 <div id="map-canvas"></div>
 <ol id="panel"></ol>

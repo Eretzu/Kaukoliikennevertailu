@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transportations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>City start</th>
+      <th>City end</th>
+      <th>Service provider</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+      <th>Traveltime</th>
+      <th>Price</th>
+      <th>Services</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transportations.each do |transportation| %>
+      <tr>
+        <td><%= transportation.city_start %></td>
+        <td><%= transportation.city_end %></td>
+        <td><%= transportation.service_provider %></td>
+        <td><%= transportation.monday %></td>
+        <td><%= transportation.tuesday %></td>
+        <td><%= transportation.wednesday %></td>
+        <td><%= transportation.thursday %></td>
+        <td><%= transportation.friday %></td>
+        <td><%= transportation.saturday %></td>
+        <td><%= transportation.sunday %></td>
+        <td><%= transportation.traveltime %></td>
+        <td><%= transportation.price %></td>
+        <td><%= transportation.services %></td>
+        <td><%= link_to 'Show', transportation %></td>
+        <td><%= link_to 'Edit', edit_transportation_path(transportation) %></td>
+        <td><%= link_to 'Destroy', transportation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transportation', new_transportation_path %>
