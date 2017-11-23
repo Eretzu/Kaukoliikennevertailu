@@ -5,7 +5,7 @@
 <h1>Public#home</h1>
 <p>Find me in app/views/public/home.html.erb</p>
 <iframe width="600" height="450" frameborder="0" style="border:0"
-src=<%= 
+src=<%=
 if(params.has_key?(:departure) && params.has_key?(:arrive))
 "https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" 
 else
@@ -19,5 +19,8 @@ end
     {:selected => params[:arrive]}) %>
   <%= submit_tag("Show route") %>  
 <% end %>
+<input type="text" maxlength="3" name="value" id='value' />
+<div id="departure" style="display: none;"> params[:departure] </div>
+<div id="arrive" style="display: none;"> params[:arrive]</div>
 <div id="map-canvas"></div>
-<ol id="panel"></ol>
+<ol id="panel" style="display: none;" ></ol>
