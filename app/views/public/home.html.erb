@@ -1,7 +1,6 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMrq2UmpHmSUSndgt-5xNhvdzI5e4wa6g&callback=initialize"
                       type="text/javascript"></script>
-
 	<div class="header">
   	<div class="logo">
 	    <%= image_tag("logo-kuva.png", :alt => "Kaukoliikenneopas") %>
@@ -61,6 +60,8 @@
 		  </div>
 	  </div>
 		
+    <div id="departure" style="display: none;"> params[:departure] </div>
+    <div id="arrive" style="display: none;"> params[:arrive]</div>
     <div id="map-canvas"></div>
 	</div>
   <ol id="panel" style="display: none;"></ol>
