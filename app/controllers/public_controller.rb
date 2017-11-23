@@ -1,6 +1,9 @@
 class PublicController < ApplicationController
   def home
-    @transports = Transportation.get(params[:departure], params[:arrive], params[:sorting])
+    day = Integer(params[:date][:day])
+    month = Integer(params[:date][:month])
+    date = Date.new(2017, month, day)
+    @transports = Transportation.get(params[:departure], params[:arrive], date, params[:sorting])
     
     @cities = City.all
     

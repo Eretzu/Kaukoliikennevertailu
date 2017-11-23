@@ -30,8 +30,8 @@
 				</div>
 				<div class="alivalikko">
 					<label for="kolmas_input">L&#228;ht&ouml;p&#228;iv&#228;</label> <!-- Teksti: Lähtöpäivä -->
-					<%= select_date Date.today, prefix: :start_date %>
-					
+					<%= select_day Date.today %>
+  				<%= select_month Date.today %>
 				</div>
 				<div class="alivalikko">
 					<label for="neljas_input">Lajitteluperuste</label>
@@ -61,19 +61,6 @@
 		  </div>
 	  </div>
 		
-<div class="oikea">	
-<!--  <iframe width="600" height="450" frameborder="0" style="border:0"	
-  src=<%= 
-  if(params.has_key?(:departure) && params.has_key?(:arrive))
-  "https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" 
-  else
-  "https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
-  end %>
-  allowfullscreen>
-  </iframe> -->
-
-
-		</div>
+    <div id="map-canvas"></div>
 	</div>
-  <div id="map-canvas"></div>
   <ol id="panel" style="display: none;"></ol>

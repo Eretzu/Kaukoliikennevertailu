@@ -141,14 +141,6 @@ input[type="text"], input[type="submit"] {
 	margin: 5px;
 }
 
-.oikea {
-	display: inline-block; /* jotta kentat ja kartta tulee vierekkäin*/
-	margin: 10px 10px 10px auto;
-	float: right;
-	position: sticky;
-	top: 10px;
-}
-
 a {
   color: #FFFFFF;
 }
@@ -157,9 +149,13 @@ a {
 
 
 #map-canvas {
-  height: 100%;
-  margin: 0px;
-  padding: 0px
+  height: 450px;
+  width: 450px;
+  padding: 0px;
+	float: right;
+	display: inline-block; /* jotta kentat ja kartta tulee vierekkäin*/
+	margin: 10px 10px 10px auto;
+	position: sticky;
 }
 
 #panel li:before {
