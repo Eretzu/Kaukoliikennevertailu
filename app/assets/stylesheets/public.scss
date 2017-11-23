@@ -1,8 +1,161 @@
 // Place all the styles related to the Public controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html,
-body,
+html, body, h1, h2, h3, p, ol, ul, li, a, form, iframe, .lohkot{ /* padding, border ja margin asetetaan aina kyseisessa tagissa/luokassa*/
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body {
+	background: #CEF6D8 image-url("hexabump.png"); /* <----------   muutettava viela*/
+	background-attachment: fixed; /*jotta takakuva ei liiku headerin, ja bodyn mukana skrollatessa*/
+}
+
+ol {
+	list-style: none;
+}
+
+.header {
+	background: #396583; /* <----------   muutettava viela + tyllikkaammat reunukset*/
+	height: 120px;
+	width: 1000px;
+	margin: 5px auto 0 auto;
+	text-align: center;
+}
+
+.logo {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	vertical-align: top;  /* ilman tätä logo, otsikot ja linkit ei ole linjassa, vaan menee porrastetusti*/
+	margin: 10px 0 10px 15px;
+	float: left;
+}
+
+.logo img{
+	height: 100%;
+	width: 100%;
+}
+
+.otsikot {
+	display: inline-block;
+	height: 100px;
+	width: 700px;
+	vertical-align: top; /* sama juttu kun ylempäänä*/
+	margin: 10px 0 10px 0;
+}
+	
+.linkit {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	margin: 10px 15px 10px 0;
+	float: right;
+}
+
+.linkit a {
+	display: inline-block;
+}
+
+.header h1 {
+	text-align: center;
+	font: 40px arial, sans-serif; /*<----------   muutettava tyylikkaamat fontit */
+}
+
+.header p {
+	text-align: center;
+	font: 20px arial, sans-serif; /*<----------   muutettava tyylikkaamat fontit */
+}
+
+.valikko {
+	background: #396583;
+	height: 80px;
+	width: 1000px;
+	margin: 50px auto 0 auto;
+}
+
+.valikko form {
+	margin: 0 auto; /* jotta valikko pysyy keskellä*/
+	padding-top: 10px;
+	width: 800px;
+	height: 60px;
+}
+
+.alivalikko {
+	display: inline-block; /* jotta valikon kentat tulee vierekkain*/
+}
+
+label, select {
+	display: block; /* jotta labelit tulee kenttien ylapuolelle*/
+	text-align: center;
+}
+
+select {
+	width: 150px;
+	height: 30px;
+}
+
+input[type="text"], input[type="submit"] {
+	width: 150px;
+	height: 25px;
+}
+
+.content {
+	background: #396583;
+	width: 1000px;
+	height: 470px;
+	margin: 50px auto 0 auto;
+}
+
+.vasen {
+	display: inline-block; /* jotta kentat ja kartta tulee vierekkäin*/
+	margin: 10px 0 10px 10px;
+	float: left;
+}
+
+.lajittelulinkit {
+	display: inline;
+	width: 600px;
+	height: 20px;
+	text-align: center;	
+	margin-bottom: 10px;
+}
+
+.lajittelulinkit p {
+	display: inline-block;
+	color: #0080FF;
+	text-decoration: underline;
+	padding-right: 20px;
+}
+
+.tulokset {
+	display: inline;
+	margin-top: 10px;
+}
+
+.tulosboksi {
+	width: 550px;
+	height: 80px;
+	background: #FFFFFF;
+	margin: 5px;
+}
+
+.oikea {
+	display: inline-block; /* jotta kentat ja kartta tulee vierekkäin*/
+	margin: 10px 10px 10px auto;
+	float: right;
+	position: sticky;
+	top: 10px;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+
+
+
 #map-canvas {
   height: 100%;
   margin: 0px;

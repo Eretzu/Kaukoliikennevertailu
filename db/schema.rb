@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121150005) do
+ActiveRecord::Schema.define(version: 20171121154633) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -21,16 +21,17 @@ ActiveRecord::Schema.define(version: 20171121150005) do
   end
 
   create_table "transportations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "city_start"
-    t.integer "city_end"
+    t.integer "city_start_id"
+    t.integer "city_end_id"
     t.string "service_provider"
-    t.time "monday"
-    t.time "tuesday"
-    t.time "wednesday"
-    t.time "thursday"
-    t.time "friday"
-    t.time "saturday"
-    t.time "sunday"
+    t.time "departure_time"
+    t.boolean "monday"
+    t.boolean "tuesday"
+    t.boolean "wednesday"
+    t.boolean "thursday"
+    t.boolean "friday"
+    t.boolean "saturday"
+    t.boolean "sunday"
     t.integer "traveltime"
     t.integer "price"
     t.string "services"

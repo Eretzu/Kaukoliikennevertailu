@@ -17,7 +17,7 @@ class TransportationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create transportation" do
     assert_difference('Transportation.count') do
-      post transportations_url, params: { transportation: { city_end: @transportation.city_end, city_start: @transportation.city_start, friday: @transportation.friday, monday: @transportation.monday, price: @transportation.price, saturday: @transportation.saturday, service_provider: @transportation.service_provider, services: @transportation.services, sunday: @transportation.sunday, thursday: @transportation.thursday, traveltime: @transportation.traveltime, tuesday: @transportation.tuesday, wednesday: @transportation.wednesday } }
+      post transportations_url, params: { transportation: { city_end_id: @transportation.city_end_id, city_start_id: @transportation.city_start_id, departure_time: @transportation.departure_time, friday: @transportation.friday, monday: @transportation.monday, price: @transportation.price, saturday: @transportation.saturday, service_provider: @transportation.service_provider, services: @transportation.services, sunday: @transportation.sunday, thursday: @transportation.thursday, traveltime: @transportation.traveltime, tuesday: @transportation.tuesday, wednesday: @transportation.wednesday } }
     end
 
     assert_redirected_to transportation_url(Transportation.last)
@@ -34,7 +34,7 @@ class TransportationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update transportation" do
-    patch transportation_url(@transportation), params: { transportation: { city_end: @transportation.city_end, city_start: @transportation.city_start, friday: @transportation.friday, monday: @transportation.monday, price: @transportation.price, saturday: @transportation.saturday, service_provider: @transportation.service_provider, services: @transportation.services, sunday: @transportation.sunday, thursday: @transportation.thursday, traveltime: @transportation.traveltime, tuesday: @transportation.tuesday, wednesday: @transportation.wednesday } }
+    patch transportation_url(@transportation), params: { transportation: { city_end_id: @transportation.city_end_id, city_start_id: @transportation.city_start_id, departure_time: @transportation.departure_time, friday: @transportation.friday, monday: @transportation.monday, price: @transportation.price, saturday: @transportation.saturday, service_provider: @transportation.service_provider, services: @transportation.services, sunday: @transportation.sunday, thursday: @transportation.thursday, traveltime: @transportation.traveltime, tuesday: @transportation.tuesday, wednesday: @transportation.wednesday } }
     assert_redirected_to transportation_url(@transportation)
   end
 

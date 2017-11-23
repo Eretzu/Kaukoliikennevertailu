@@ -1,31 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  city_start: 1
-  city_end: 1
+  city_start_id: 1
+  city_end_id: 1
   service_provider: MyString
-  monday: 2017-11-21 17:00:05
-  tuesday: 2017-11-21 17:00:05
-  wednesday: 2017-11-21 17:00:05
-  thursday: 2017-11-21 17:00:05
-  friday: 2017-11-21 17:00:05
-  saturday: 2017-11-21 17:00:05
-  sunday: 2017-11-21 17:00:05
+  departure_time: 2017-11-21 17:46:33
+  monday: false
+  tuesday: false
+  wednesday: false
+  thursday: false
+  friday: false
+  saturday: false
+  sunday: false
   traveltime: 1
   price: 1
   services: MyString
 
 two:
-  city_start: 1
-  city_end: 1
+  city_start_id: 1
+  city_end_id: 1
   service_provider: MyString
-  monday: 2017-11-21 17:00:05
-  tuesday: 2017-11-21 17:00:05
-  wednesday: 2017-11-21 17:00:05
-  thursday: 2017-11-21 17:00:05
-  friday: 2017-11-21 17:00:05
-  saturday: 2017-11-21 17:00:05
-  sunday: 2017-11-21 17:00:05
+  departure_time: 2017-11-21 17:46:33
+  monday: false
+  tuesday: false
+  wednesday: false
+  thursday: false
+  friday: false
+  saturday: false
+  sunday: false
   traveltime: 1
   price: 1
   services: MyString

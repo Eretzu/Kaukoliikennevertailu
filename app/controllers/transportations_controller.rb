@@ -1,6 +1,6 @@
 class TransportationsController < ApplicationController
   before_action :set_transportation, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /transportations
   # GET /transportations.json
   def index
@@ -69,6 +69,6 @@ class TransportationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transportation_params
-      params.require(:transportation).permit(:city_start, :city_end, :service_provider, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :traveltime, :price, :services)
+      params.require(:transportation).permit(:city_start_id, :city_end_id, :service_provider, :departure_time, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :traveltime, :price, :services)
     end
 end

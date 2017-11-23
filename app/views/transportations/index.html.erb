@@ -8,6 +8,7 @@
       <th>City start</th>
       <th>City end</th>
       <th>Service provider</th>
+      <th>Departure time</th>
       <th>Monday</th>
       <th>Tuesday</th>
       <th>Wednesday</th>
@@ -25,9 +26,10 @@
   <tbody>
     <% @transportations.each do |transportation| %>
       <tr>
-        <td><%= transportation.city_start %></td>
-        <td><%= transportation.city_end %></td>
+        <td><%= transportation.city_start_id %></td>
+        <td><%= transportation.city_end_id %></td>
         <td><%= transportation.service_provider %></td>
+        <td><%= transportation.departure_time %></td>
         <td><%= transportation.monday %></td>
         <td><%= transportation.tuesday %></td>
         <td><%= transportation.wednesday %></td>

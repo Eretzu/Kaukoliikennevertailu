@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :city_start %>
-    <%= form.number_field :city_start, id: :transportation_city_start %>
+    <%= form.label :city_start_id %>
+    <%= form.number_field :city_start_id, id: :transportation_city_start_id %>
   </div>
 
   <div class="field">
-    <%= form.label :city_end %>
-    <%= form.number_field :city_end, id: :transportation_city_end %>
+    <%= form.label :city_end_id %>
+    <%= form.number_field :city_end_id, id: :transportation_city_end_id %>
   </div>
 
   <div class="field">
@@ -27,38 +27,43 @@
   </div>
 
   <div class="field">
+    <%= form.label :departure_time %>
+    <%= form.time_select :departure_time, id: :transportation_departure_time %>
+  </div>
+
+  <div class="field">
     <%= form.label :monday %>
-    <%= form.time_select :monday, id: :transportation_monday %>
+    <%= form.check_box :monday, id: :transportation_monday %>
   </div>
 
   <div class="field">
     <%= form.label :tuesday %>
-    <%= form.time_select :tuesday, id: :transportation_tuesday %>
+    <%= form.check_box :tuesday, id: :transportation_tuesday %>
   </div>
 
   <div class="field">
     <%= form.label :wednesday %>
-    <%= form.time_select :wednesday, id: :transportation_wednesday %>
+    <%= form.check_box :wednesday, id: :transportation_wednesday %>
   </div>
 
   <div class="field">
     <%= form.label :thursday %>
-    <%= form.time_select :thursday, id: :transportation_thursday %>
+    <%= form.check_box :thursday, id: :transportation_thursday %>
   </div>
 
   <div class="field">
     <%= form.label :friday %>
-    <%= form.time_select :friday, id: :transportation_friday %>
+    <%= form.check_box :friday, id: :transportation_friday %>
   </div>
 
   <div class="field">
     <%= form.label :saturday %>
-    <%= form.time_select :saturday, id: :transportation_saturday %>
+    <%= form.check_box :saturday, id: :transportation_saturday %>
   </div>
 
   <div class="field">
     <%= form.label :sunday %>
-    <%= form.time_select :sunday, id: :transportation_sunday %>
+    <%= form.check_box :sunday, id: :transportation_sunday %>
   </div>
 
   <div class="field">

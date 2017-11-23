@@ -1,23 +1,79 @@
 
-<head><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMrq2UmpHmSUSndgt-5xNhvdzI5e4wa6g&callback=initialize"
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMrq2UmpHmSUSndgt-5xNhvdzI5e4wa6g&callback=initialize"
                       type="text/javascript"></script>
-</head>
-<h1>Public#home</h1>
-<p>Find me in app/views/public/home.html.erb</p>
-<iframe width="600" height="450" frameborder="0" style="border:0"
-src=<%= 
-if(params.has_key?(:departure) && params.has_key?(:arrive))
-"https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" 
-else
-"https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
-end
-%> allowfullscreen></iframe> 
-<%= form_tag("/", method: "get") do %>
-  <%= collection_select(nil, :departure, @cities, :name, :name, 
-    {:selected => params[:departure]}) %>
-  <%= collection_select(nil, :arrive,    @cities, :name, :name, 
-    {:selected => params[:arrive]}) %>
-  <%= submit_tag("Show route") %>  
-<% end %>
-<div id="map-canvas"></div>
-<ol id="panel"></ol>
+
+	<div class="header">
+  	<div class="logo">
+	    <%= image_tag("logo-kuva.png", :alt => "Kaukoliikenneopas") %>
+		</div>
+		<div class="otsikot">
+			<h1>Kaukoliikennevertailu</h1>
+			<p>Vertaa kaukoliikennev&#228;lineit&#228;</p>
+		</div>
+		<div class="linkit">
+			<a href="https://www.facebook.com/Kaukoliikenneopasfi-306647539837851/">fb-sivu</a> 
+			<a href="https://blogs.aalto.fi/finnishrail/">blogi</a>
+		</div>
+	</div>
+	
+		<div class="valikko">
+    	<%= form_tag("/", method: "get") do %>
+				<div class="alivalikko">
+					<label for="eka_input">L&#228;ht&ouml;paikka</label> <!-- Teksti: Kaukoliikennevälineitä -->
+					<select id="eka_input" name="departure">
+						<option value="helsinki">Helsinki</option>
+					</select>
+				</div>
+				<div class="alivalikko">
+					<label for="toka_input">M&#228;&#228;r&#228;np&#228;&#228;</label> <!-- Teksti: Määränpää -->
+  <%= collection_select(nil, :arrive,    @cities, :name, :name, {:selected => params[:arrive]}) %>
+				</div>
+				<div class="alivalikko">
+					<label for="kolmas_input">L&#228;ht&ouml;p&#228;iv&#228;</label> <!-- Teksti: Lähtöpäivä -->
+					<%= select_date Date.today, prefix: :start_date %>
+					
+				</div>
+				<div class="alivalikko">
+					<label for="neljas_input">Lajitteluperuste</label>
+					<select id="neljas_input "name="sorting">
+						<option value="price">Halvin</option>
+						<option value="traveltime">Nopein</option>
+						<!--<option value="ekologisin">Ekologisin</option>-->
+					</select>
+				</div>
+			  <%= submit_tag("Show route") %>  
+			<% end %>
+		</div>
+		
+  <div class="content">
+	  <div class="vasen">
+		  <div class="tulokset">
+        <ul>
+          <% @transports.each do |t| %>
+            <li>
+              <%= image_tag("#{t.service_provider}.jpg", :alt => t.service_provider) %>
+              <%= t.departure_time.strftime("%I:%M%p") %>
+              <%= (t.traveltime/60).to_s + "h " + (t.traveltime%60).to_s + "m" %>
+              <%= (t.price/100).to_s + "," + (t.price%100).to_s + "0 €" %>
+            </li>
+          <% end %>
+        </ul>
+		  </div>
+	  </div>
+		
+<div class="oikea">	
+<!--  <iframe width="600" height="450" frameborder="0" style="border:0"	
+  src=<%= 
+  if(params.has_key?(:departure) && params.has_key?(:arrive))
+  "https://www.google.com/maps/embed/v1/directions?origin=#{params[:departure]}&destination=#{params[:arrive]}&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow" 
+  else
+  "https://www.google.com/maps/embed/v1/view?zoom=4&center=61.9241,25.7482&key=AIzaSyA4aM_O_PAI4KJi2IqZSuD5RVpthoZevow"
+  end %>
+  allowfullscreen>
+  </iframe> -->
+
+
+		</div>
+	</div>
+  <div id="map-canvas"></div>
+  <ol id="panel" style="display: none;"></ol>
