@@ -12,7 +12,7 @@ body {
 	background-attachment: fixed; /*jotta takakuva ei liiku headerin, ja bodyn mukana skrollatessa*/
 }
 
-ol {
+ul {
 	list-style: none;
 }
 
@@ -82,10 +82,6 @@ ol {
 	height: 60px;
 }
 
-.alivalikko {
-	display: inline-block; /* jotta valikon kentat tulee vierekkain*/
-}
-
 label, select {
 	display: block; /* jotta labelit tulee kenttien ylapuolelle*/
 	text-align: center;
@@ -145,6 +141,81 @@ a {
   color: #FFFFFF;
 }
 
+//BOX STYLES
+
+#date_day {
+  width: 40px;
+}
+
+#date_month {
+  width: 100px;
+}
+
+.alivalikko {
+	display: inline-block; /* jotta valikon kentat tulee vierekkain*/
+}
+
+.alivalikko select {
+  background-color: #3b8ec2;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+.alivalikkoinput {
+  background-color: #3b8ec2;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+	padding: 15px 10px;
+	line-height: 2px;
+}
+/*
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   //width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   //height: 29px;
+   //padding: 5px; /* If you add too much padding here, the options won't show in IE 
+   //width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   //width: 240px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   //width: 268px;
+}
+
+.blue { background-color: #3b8ec2; }
+
+.blue select { color: #fff; }
+
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+*/
 
 
 

@@ -16,7 +16,7 @@
 
 
 function initialize() {
-    var dep = document.getElementById("departure").value;
+    var dep = document.getElementById("eka_input").value;
     var ar  = document.getElementById("arrive").value;
     var goo         = google.maps,
         map         = new goo.Map(document.getElementById('map-canvas'),
