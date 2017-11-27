@@ -6,7 +6,7 @@
 	    <%= image_tag("logo-kuva.png", :alt => "Kaukoliikenneopas") %>
 		</div>
 		<div class="otsikot">
-			<h1>Kaukoliikennevertailu</h1>
+			<h1>Kaukoliikenneopas</h1>
 			<p>Vertaa kaukoliikennev&#228;lineit&#228;</p>
 		</div>
 		<div class="linkit">
@@ -48,22 +48,34 @@
 		
   <div class="content">
 	  <div class="vasen">
-		  <div class="tulokset">
+	          <div class="tulokset">
         <ul>
           <% @transports.each do |t| %>
             <li>
-              <%= image_tag("#{t.service_provider}.jpg", :alt => t.service_provider) %>
-              <%= t.departure_time.strftime("%H:%M") %>
-              <%= (t.traveltime/60).to_s + "h " + (t.traveltime%60).to_s + "min" %>
-              <%= (t.price/100).to_s + " €" %>
-            </li>
+            <div class="tulosboksi">
+                <%= image_tag("#{t.service_provider}.jpg", :alt => t.service_provider, class: "logo1") %>
+              <div class="nappula">
+                <a href="#" class="myButton">Osta</a>
+              </div>
+              <div class="hinta">
+                <p><%= (t.price/100).to_s + " €" %></p>
+              </div>
+              <div class="matka-aika">
+                <p><%= (t.traveltime/60).to_s + "h " + (t.traveltime%60).to_s + "min" %></p>
+              </div>
+              <div class="lahtoaika">
+                <p><%= t.departure_time.strftime("%H:%M") %></p>
+              </div>
+            </div>
+          </li>          
           <% end %>
         </ul>
+                </div>
 		  </div>
-	  </div>
-		
-    <div id="departure" style="display: none;" value="Helsinki" > <%= params[:departure] %> </div>
-    <div id="arrive" style="display: none;" value="Oulu" > <%= params[:arrive] %></div>
+  <div class="oikea">
     <div id="map-canvas"></div>
+  </div>
+	  </div>
+
 	</div>
   <ol id="panel" style="display: none;"></ol>
