@@ -6,7 +6,7 @@
 	    <%= image_tag("logo-kuva.png", :alt => "Kaukoliikenneopas") %>
 		</div>
 		<div class="otsikot">
-			<h1>Kaukoliikennevertailu</h1>
+			<h1>Kaukoliikenneopas</h1>
 			<p>Vertaa kaukoliikennev&#228;lineit&#228;</p>
 		</div>
 		<div class="linkit">
@@ -28,8 +28,10 @@
   <%= collection_select(nil, :arrive,    @cities, :name, :name, {:selected => params[:arrive]}) %>
 				</div>
 				<div class="alivalikko">
-					<label for="kolmas_input">L&#228;ht&ouml;p&#228;iv&#228;</label> <!-- Teksti: Lähtöpäivä -->
 					<%= select_day Date.today %>
+				</div>					
+				<!--<label for="kolmas_input">L&#228;ht&ouml;p&#228;iv&#228;</label> <!-- Teksti: Lähtöpäivä -->
+				<div class="alivalikko">
   				<%= select_month Date.today %>
 				</div>
 				<div class="alivalikko">
@@ -40,28 +42,41 @@
 						<!--<option value="ekologisin">Ekologisin</option>-->
 					</select>
 				</div>
-			  <%= submit_tag("Show route") %>  
+			  <%= submit_tag("Show route", class: "alivalikkoinput") %>  
 			<% end %>
 		</div>
 		
   <div class="content">
 	  <div class="vasen">
-		  <div class="tulokset">
+	          <div class="tulokset">
         <ul>
           <% @transports.each do |t| %>
             <li>
-              <%= image_tag("#{t.service_provider}.jpg", :alt => t.service_provider) %>
-              <%= t.departure_time.strftime("%I:%M%p") %>
-              <%= (t.traveltime/60).to_s + "h " + (t.traveltime%60).to_s + "m" %>
-              <%= (t.price/100).to_s + "," + (t.price%100).to_s + "0 €" %>
-            </li>
+            <div class="tulosboksi">
+                <%= image_tag("#{t.service_provider}.jpg", :alt => t.service_provider, class: "logo1") %>
+              <div class="nappula">
+                <a href="#" class="myButton">Osta</a>
+              </div>
+              <div class="hinta">
+                <p><%= (t.price/100).to_s + " €" %></p>
+              </div>
+              <div class="matka-aika">
+                <p><%= (t.traveltime/60).to_s + "h " + (t.traveltime%60).to_s + "min" %></p>
+              </div>
+              <div class="lahtoaika">
+                <p><%= t.departure_time.strftime("%H:%M") %></p>
+              </div>
+            </div>
+          </li>          
           <% end %>
         </ul>
+            </div>
 		  </div>
-	  </div>
-		
-    <div id="departure" style="display: none;"> <%= params[:departure] %></div>
-    <div id="arrive" style="display: none;"> <%= params[:arrive] %></div>
+
+  <div class="oikea">
     <div id="map-canvas"></div>
-    <ol  id="panel" style="display: none;"></ol>
+  </div>
+  </div>
+
 	</div>
+<ol  id="panel" style="display: none;"></ol>
