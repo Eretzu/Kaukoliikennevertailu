@@ -20,7 +20,7 @@
 				<div class="alivalikko">
 					<label for="eka_input">L&#228;ht&ouml;paikka</label> <!-- Teksti: Kaukoliikennevälineitä -->
 					<select id="eka_input" name="departure">
-						<option value="helsinki">Helsinki</option>
+						<option value="Helsinki">Helsinki</option>
 					</select>
 				</div>
 				<div class="alivalikko">
@@ -60,8 +60,8 @@
 		  </div>
 	  </div>
 		
-    <div id="departure" style="display: none;"> params[:departure] </div>
-    <div id="arrive" style="display: none;"> params[:arrive]</div>
+    <div id="departure" style="display: none;"> <%= params[:departure] %></div>
+    <div id="arrive" style="display: none;"> <%= params[:arrive] %></div>
     <div id="map-canvas"></div>
+    <ol  id="panel" style="display: none;"></ol>
 	</div>
-  <ol id="panel" style="display: none;"></ol>
