@@ -28,6 +28,7 @@
   <%= collection_select(nil, :arrive,    @cities, :name, :name, {:selected => params[:arrive]}) %>
 				</div>
 				<div class="alivalikko">
+				<label for="date_day">Lähtöpäivämäärä</label>
 					<%= select_day Date.today %>
 				</div>					
 				<!--<label for="kolmas_input">L&#228;ht&ouml;p&#228;iv&#228;</label> <!-- Teksti: Lähtöpäivä -->

@@ -87,7 +87,7 @@ p, div {
 
 .valikko {
 	background: #3d7deb image-url("cartographer.png");
-	height: 80px;
+	height: 100px;
 	width: 1007px;
 	margin: 50px auto 0 auto;
 	border-radius: 20px;
@@ -101,8 +101,9 @@ p, div {
 .valikko form {
 	margin: 0 auto; /* jotta valikko pysyy keskellä*/
 	padding-top: 10px;
-	width: 800px;
-	height: 60px;
+	float: right;
+	width: 900px;
+	height: 90px;
 }
 
 .alivalikko {
@@ -111,17 +112,20 @@ p, div {
 
 label, select {
 	display: block; /* jotta labelit tulee kenttien ylapuolelle*/
+	font-size: 25px;
 	text-align: center;
 }
 
 select {
 	width: 150px;
-	height: 30px;
+	height: 50px;
 }
 
 input[type="text"], input[type="submit"] {
-	width: 150px;
-	height: 25px;
+  width: 150px;
+  font-size: 20px;  
+  font-weight: bold;  
+  height: 50px; 
 }
 
 /*-----------------------------------------------------------*/
@@ -302,16 +306,24 @@ a {
 //BOX STYLES
 
 #date_day {
-  width: 40px;
+  width: 60px; /*@@@@ alunperin 40px*/
 }
 
+label[for="date_day"] { /*@@@@ kokonaan uusi*/
+  width: 60px; 
+}
+
+/* line 308, /home/mikko/Programming/Kaukoliikennevertailu/app/assets/stylesheets/public.scss */
 #date_month {
-  width: 100px;
+  width: 140px; /*@@@@ alunperin 100px*/
 }
 
+/* line 312, /home/mikko/Programming/Kaukoliikennevertailu/app/assets/stylesheets/public.scss */
 .alivalikko select {
-  background-color: #3b8ec2;
-  color: #fff;
+  background-color: #FFFFFF; /*@@@@ alunperin #3b8ec2*/
+  color: #000000; /*@@@@ alunperin #fff*/
+  font-size: 20px;    /*@@@@ uusi*/
+  font-weight: bold;  /*@@@@ uusi*/
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
