@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171121154633) do
 
-  create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "cities", force: :cascade do |t|
     t.string "name"
     t.integer "offset_x"
     t.integer "offset_y"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171121154633) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transportations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "transportations", force: :cascade do |t|
     t.integer "city_start_id"
     t.integer "city_end_id"
     t.string "service_provider"
